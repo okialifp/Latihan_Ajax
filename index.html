@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>us
+	<title>Latihan ajax</title>
+</head>
+<body>
+
+	<button onclick="AjaxGetDate()"></button>
+	<span id="tanggal"></span>
+
+</body>
+	
+	<script type="text/javascript">
+		function ajaxGetDate() {
+			var xhttp;
+			if(window.XMLHttpRequest){
+				xhttp = new 
+					XMLHttpRequest();
+			}else{
+				xhttp = new
+					ActiveXObject("Microsoft.XMLHttpRequest");
+			}
+			xhttp.onreadystatechange = 
+				function () {
+					if (this.readyState==4&& this.status==200) {
+						document.getElementBYid('tanggal').innerHTML = this.responseText; 
+					}
+				}
+			xhttp.open("GET","server.php?p=date",);
+
+		}
+
+
+	</script>
+
+</html>
+
+
+
+
